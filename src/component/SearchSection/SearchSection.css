@@ -1,0 +1,29 @@
+.search-section {
+    width: 60%;
+    margin: auto;
+    margin-top: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.1em solid coral;
+    border-radius: 1.5em;
+}
+
+.go-button {
+    margin: 2em;
+    height: 40px;
+    width: 60px;
+    border-radius: 1em;
+    font-size: 0.8em;
+    cursor: pointer;
+}
+
+.go-button:hover {
+    background-color:honeydew;
+}
+
+@media (max-width: 750px) {
+    .search-section {
+        flex-direction: column;
+    }
+}

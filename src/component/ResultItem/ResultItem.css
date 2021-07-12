@@ -1,0 +1,19 @@
+.result-item-wrapper {
+    margin: auto;
+    margin-bottom: 20px;
+    max-width: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.occurence-detail {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.occurence-detail p {
+    margin: 10px;
+}

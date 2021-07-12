@@ -1,23 +1,38 @@
-import logo from './logo.svg';
+import SearchSection from './component/SearchSection/SearchSection';
+import ResultPage from './component/ResultPage/ResultPage';
+import { useState } from 'react';
+import { SearchContext } from './contexts/SearchContext';
+
 import './App.css';
 
 function App() {
+  const [keyword, setKeyword] = useState('online title search')
+  const [url, setUrl] = useState('infotrack.com.au')
+  const [result, setResult] = useState([])
+  const [loading, setLoading] = useState(false)
+  const [engineToUse, setEngineToUse] = useState(['google'])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>
+        Company Ranking Check
+      </h1>
+      <SearchContext.Provider
+        value={{
+          keyword,
+          setKeyword,
+          url,
+          setUrl,
+          result,
+          setResult,
+          loading,
+          setLoading,
+          engineToUse,
+          setEngineToUse}}>
+        <SearchSection />
+        <ResultPage />
+      </SearchContext.Provider>
+        
     </div>
   );
 }
